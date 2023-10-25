@@ -1,0 +1,46 @@
+@startuml
+
+class Pessoa {
+  -nome: String
+  -telefone: String
+}
+
+class PessoaFisica {
+  -cpf: String
+}
+
+class PessoaJuridica {
+  -cnpj: String
+}
+
+class Curso {
+  -nome: String
+  -cargaHoraria: int
+  -iniciarCurso(): void
+}
+
+class Aluno {
+  -matricula: String
+}
+
+class Cliente {
+  -nome: String
+  -cursosContratados: List<Curso>
+  -contratarCurso(curso: Curso): void
+}
+
+class Autor {
+  +nome: String
+  +escreverLivro(): void
+}
+
+class Livro {
+  +titulo: String
+}
+
+Pessoa <|-- PessoaFisica
+Pessoa <|-- PessoaJuridica
+Cliente "0..*" -- "1" Curso : contrata
+Autor "1" -- "0..*" Livro : escreve
+
+@enduml
