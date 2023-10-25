@@ -1,6 +1,4 @@
 class Aluno:
 
-    def __init__(self, nome, cpf, email, matricula):
-        self._nome = nome
-        self._email = email
+    def __init__(self, matricula):
         self._matricula = matricula
